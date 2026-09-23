@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101820" />
+    <title>CKB Testnet Sign Lab</title>
+    <script type="module" crossorigin src="/assets/index-CP8ZHD49.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CCQZIas4.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="eyebrow"><span class="pulse"></span> CKB TESTNET / SIGN LAB</div>
+        <h1>让插件签一笔真实的<br /><em>128 CKB</em> 测试交易。</h1>
+        <p class="lede">这个页面会从当前钱包读取 live cells，构造完整交易，然后交给 ckb-tw 插件确认签名。</p>
+        <div class="network-pill">TESTNET <span>•</span> 128 CKB</div>
+      </section>
+
+      <section class="workspace">
+        <div class="panel account-panel">
+          <div class="panel-label">01 / WALLET CONNECTION</div>
+          <div class="account-row">
+            <div class="avatar">CK</div>
+            <div class="account-copy">
+              <strong id="account-state">尚未连接钱包</strong>
+              <code id="account-address">连接后显示当前地址</code>
+            </div>
+            <button class="button button-quiet" id="connect-button">连接钱包</button>
+          </div>
+          <div class="balance-strip">
+            <span>可用余额</span>
+            <strong id="balance">-- CKB</strong>
+          </div>
+        </div>
+
+        <div class="panel transfer-panel">
+          <div class="panel-label">02 / TRANSACTION INTENT</div>
+          <div class="recipient-block">
+            <span class="field-label">收款地址</span>
+            <code class="recipient-address">ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqdrcaufs8qeu8wvvy0myyedek4vqad9qeq3gc4cf</code>
+          </div>
+          <div class="amount-row">
+            <div>
+              <span class="field-label">转账金额</span>
+              <strong class="amount">128 <small>CKB</small></strong>
+            </div>
+            <div class="amount-mark">CKB</div>
+          </div>
+          <div class="transaction-meta">
+            <span><i></i> Testnet</span>
+            <span id="fee-label">手续费预留 0.001 CKB</span>
+          </div>
+          <button class="button button-primary" id="sign-button" disabled>
+            <span>请求插件签名</span><span class="arrow">↗</span>
+          </button>
+          <p class="hint" id="status" role="status">请先连接 ckb-tw 插件。</p>
+        </div>
+
+        <div class="panel log-panel">
+          <div class="panel-label">ACTIVITY / RPC TRACE</div>
+          <div class="log" id="log" aria-live="polite">
+            <div class="log-line"><span class="log-time">--:--:--</span><span>等待网页 Provider 注入</span></div>
+          </div>
+        </div>
+      </section>
+
+      <footer><span>CKB TESTNET</span><span>ckb-tw-web</span><span>签名由钱包确认</span></footer>
+    </main>
+  </body>
+</html>
